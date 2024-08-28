@@ -1,9 +1,6 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://ecovidapangeia.com/",
+  site: "https://ecovidapangeia.com",
   trailingSlash: "never",
-  redirects: {
-    "/": "",
-  },
 });
