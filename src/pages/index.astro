@@ -1,16 +1,23 @@
 ---
+import Layout from "@layouts/Layout.astro";
 
+const pageTitle =
+  "Desperte sua consciência com o Clube da Transição!";
+
+const pageDescription =
+  "Junte-se ao Clube da Transição para autoconhecimento, sustentabilidade e " +
+  "práticas regenerativas. Seja um cofundador e contribua para um futuro " +
+  "mais consciente.";
+
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<Layout
+  pageTitle={pageTitle}
+  pageDescription={pageDescription}
+  canonicalUrl={canonicalUrl}
+>
+  <main slot="main">
+    <h1>Desperte sua consciência com o Clube da Transição!</h1>
+  </main>
+</Layout>
