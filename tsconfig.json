@@ -4,11 +4,14 @@
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
     "paths": {
-      "@layouts": [
+      "@layouts/*": [
         "src/layouts/*"
       ],
-      "@components": [
+      "@components/*": [
         "src/components/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
       ]
     }
   }
