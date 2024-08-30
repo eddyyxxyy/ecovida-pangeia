@@ -1,0 +1,33 @@
+---
+interface Props {
+  className?: string;
+  paralax?: string;
+  opacity?: string;
+  variant: "bg-brand-mud" | "bg-brand-orange" | "bg-brand-green" | "bg-white";
+  padding?: string;
+}
+
+const { className, opacity, paralax, padding, variant } = Astro.props;
+---
+
+<section class={`flex align-center justify-center ${variant}`}>
+  <div class={`flex align-center justify-center min-w-full ${paralax}`}>
+    {
+      opacity === undefined ? (
+        <div
+          class={`w-full max-w-[23rem] ${padding ? padding : "px-3 py-6"} md:max-w-5xl ${className}`}
+        >
+          <slot />
+        </div>
+      ) : (
+        <div class={`min-w-full flex justify-center ${className} ${opacity}`}>
+          <div
+            class={`w-full max-w-[23rem] ${padding ? padding : "px-3 py-6"} md:max-w-5xl`}
+          >
+            <slot />
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>

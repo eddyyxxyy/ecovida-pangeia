@@ -1,0 +1,20 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends Omit<HTMLAttributes<"button">, "class"> {
+  className: string;
+  content: string;
+  link: HTMLAttributes<"a">;
+}
+
+const { className, content, link, ...props } = Astro.props;
+---
+
+<a {...link}>
+  <button
+    {...props}
+    class={`w-full rounded-full font-bold text-center text-lg p-3 whitespace-nowrap transition-all hover:brightness-105 hover:scale-105 lg:p-4 ${className}`}
+  >
+    {content}
+  </button>
+</a>

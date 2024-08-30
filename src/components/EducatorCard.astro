@@ -1,0 +1,45 @@
+---
+import type { ComponentProps } from "astro/types";
+import { Image } from "astro:assets";
+
+interface Props {
+  image: ComponentProps<typeof Image>;
+  imageCaption: string;
+  heading: "h1" | "h2" | "h3" | "h4" | "h5";
+  name: string;
+  content: string;
+  colsSpan?: string;
+}
+
+const {
+  image,
+  imageCaption,
+  colsSpan = 100,
+  heading: Heading,
+  name,
+  content,
+} = Astro.props;
+---
+
+<div
+  class={`w-full h-full flex flex-col justify-center items-center gap-y-4 ${colsSpan} font-montserrat`}
+>
+  <figure
+    data-aos="fade-up"
+    class="max-w-40 rounded-2xl overflow-hidden shadow-xl md:min-w-44 md:max-w-56 lg:max-w-60"
+  >
+    <Image {...image} class="object-cover aspect-[3/4]" />
+    <figcaption class="sr-only">{imageCaption}</figcaption>
+  </figure>
+  <div
+    data-aos="fade-up"
+    class="w-full max-w-40 md:max-w-80 flex-grow flex flex-col justify-center items-center text-center rounded-2xl bg-white border border-gray-100 p-4 shadow-xl"
+  >
+    <Heading class="font-bold text-brand-green text-xl mb-1">
+      {name}
+    </Heading>
+    <p class="max-w-44 font-medium text-sm md:max-w-72 md:text-base lg:text-lg">
+      {content}
+    </p>
+  </div>
+</div>
