@@ -1,8 +1,26 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "@layouts/Layout.astro";
 
+import CtaButton from "@components/CtaButton.astro";
+import SectionLP from "@components/SectionLP.astro";
+import Card from "@components/Card.astro";
+import EducatorCard from "@components/EducatorCard.astro";
+
+import logoPangeiaImage from "@assets/logo_do_projeto_pangeia_ecoeduca.webp";
+import seuZeIsabelaFernandesImage from "@assets/seu-ze-e-isabela-fernandes.webp";
+import seuZeSegurandoDiversasFrutosImage from "@assets/seu-ze-segurando-diversos-frutos.webp";
+import seuZeAlegoriaDaNovaEraCaminhosDaTransicao from "@assets/seu-ze-alegoria-da-nova-era-caminhos-da-transicao.webp";
+import isabelaFernandesConversasAyurvedicas from "@assets/isabela-fernandes-conversas-ayurvedicas.webp";
+import matheusBarbosaEducacaoAmbientalParaPaisEFilhos from "@assets/matheus-barbosa-educacao-ambiental-para-pais-e-filhos.webp";
+import rafaelPredeschiArquiteturaSustentavelEBioarquitetura from "@assets/rafael-predeschi-arquitetura-sustentavel-e-bioarquitetura.webp";
+import andreBuraEconomiaDoDespertar from "@assets/andre-bura-economia-do-despertar.webp";
+import jordaoDireitoParaAsEcovilas from "@assets/jordao-direito-para-as-ecovilas.webp";
+import agtaRobertaConhecendoARosaDoDeserto from "@assets/agta-roberta-conhecendo-a-rosa-do-deserto.webp";
+
 const pageTitle =
-  "Desperte sua consciência com o Clube da Transição!";
+  "Desperte sua consciência com o Clube da Transição! Acesse e faça parte!";
 
 const pageDescription =
   "Junte-se ao Clube da Transição para autoconhecimento, sustentabilidade e " +
@@ -18,6 +36,605 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
   canonicalUrl={canonicalUrl}
 >
   <main slot="main">
-    <h1>Desperte sua consciência com o Clube da Transição!</h1>
+    <header
+      class="overflow-hidden bg-header-paralax bg-fixed bg-center bg-cover"
+    >
+      <div
+        class="flex align-center justify-center bg-brand-green bg-opacity-90 md:px-10 md:pt-2 md:mb-0"
+      >
+        <div
+          data-aos="fade-up"
+          data-aos-delay="300"
+          class="max-w-[23rem] px-3 py-4 md:max-w-5xl md:pb-0"
+        >
+          <div class="md:flex md:justify-center">
+            <div class="space-y-4 flex-1 max-w-[24rem] lg:pt-8">
+              <figure class="flex justify-center md:justify-start">
+                <Image
+                  src={logoPangeiaImage}
+                  alt="Logo do Instituto Filosófico de Cultura Regenerativa Ecovida Pangeia"
+                  width={128}
+                  height={124}
+                  loading="eager"
+                />
+                <figcaption class="sr-only">
+                  Logo do Instituto Filosófico de Cultura Regenerativa Ecovida
+                  Pangeia
+                </figcaption>
+              </figure>
+              <div class="space-y-4">
+                <h1
+                  class="font-montserrat font-bold text-center text-3xl leading-8 text-white mb-2 md:text-left md:text-xl lg:text-4xl"
+                >
+                  Desperte sua consciência com o Clube da Transição!
+                </h1>
+                <p
+                  class="text-center text-xl text-white md:text-left md:text-lg lg:text-xl lg:max-w-80"
+                >
+                  A forma mais eficiente e acessível para realizar a transição
+                  para um estilo de vida mais consciente.
+                </p>
+                <CtaButton
+                  className="bg-brand-orange text-white hidden mt-4 md:block"
+                  content="Vem fazer parte do clube!"
+                  link={{
+                    href: "https://pay.hotmart.com/X93273748V",
+                    rel: "noopener noreferrer nofollow",
+                    target: "_blank",
+                    "aria-label": "Venha fazer parte do clube!",
+                  }}
+                />
+              </div>
+            </div>
+            <div class="flex-1 md:min-w-[28rem]">
+              <figure class="md:pt-10">
+                <Image
+                  src={seuZeIsabelaFernandesImage}
+                  alt="Seu Zé e Isabela Fernandes segurando frutas e hortaliças cultivadas na Ecovila"
+                  loading="eager"
+                />
+                <figcaption class="sr-only">
+                  Seu Zé e Isabela Fernandes segurando frutas e hortaliças
+                  cultivadas na Ecovila
+                </figcaption>
+              </figure>
+              <CtaButton
+                className="bg-brand-orange text-white -mt-10 md:hidden"
+                content="Vem fazer parte do clube!"
+                link={{
+                  href: "https://pay.hotmart.com/X93273748V",
+                  rel: "noopener noreferrer nofollow",
+                  target: "_blank",
+                  "aria-label": "Venha fazer parte do clube!",
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <SectionLP
+      variant="bg-brand-orange"
+      className="flex flex-col items-center gap-y-4 md:gap-y-8"
+    >
+      <h2
+        data-aos="fade-down"
+        class="max-w-[32rem] font-montserrat font-black text-center text-3xl leading-8 text-white lg:text-[2.5rem] lg:leading-10"
+      >
+        Sejam bem-vindos ao Projeto Pangeia
+      </h2>
+      <article data-aos="zoom-out-up" data-aos-delay="500" class="w-full">
+        <figure class="w-full flex items-center justify-center mb-8">
+          <iframe
+            class="w-full max-w-96 min-h-64 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
+            src="https://www.youtube-nocookie.com/embed/NX6X-Y67y9c?si=dQUnLx0cSWV8l4Xc"
+            title="Seu Zé apresenta o Clube da Transição"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+          <figcaption class="sr-only">
+            Seu Zé apresenta o Clube da Transição, um projeto do Pangeia
+            Ecovida, que se localiza em Diamantina - Minas Gerais.
+          </figcaption>
+        </figure>
+        <div class="font-montserrat text-white space-y-4 mb-8 md:px-12 lg:px-0">
+          <h3 class="font-semibold text-left text-xl w-full">
+            Torne-se um cofundador do Clube da Transição e receba os seguintes
+            benefícios:
+          </h3>
+          <ul class="list-inside space-y-2 md:text-lg lg:text-xl">
+            <li>
+              <span class="font-medium"> - Comunidade digital: </span>
+              Interaja diretamente com pessoas que compartilham da mesma jornada.
+            </li>
+            <li>
+              <span class="font-medium">
+                - Acesso ao cotidiano da Pangeia:</span
+              >
+              Explore abordagens práticas de conteúdos relacionados à construção
+              de um novo modelo de vida.
+            </li>
+            <li>
+              <span class="font-medium">
+                - Espaço para prática de conhecimento:
+              </span>
+              Participe e coloque em prática todo o conhecimento adquirido.
+            </li>
+            <li>
+              <span class="font-medium"> - Encontre o seu propósito: </span>
+              Ao participar do clube, você identificará a sua jornada pessoal.
+            </li>
+            <li>
+              <span class="font-medium">
+                - Participação em projeto sustentável:
+              </span>
+              Contribua ativamente para a construção e evolução de um projeto regenerativo.
+            </li>
+          </ul>
+          <div class="relative flex justify-center items-center">
+            <CtaButton
+              className="absolute top-7 right-[50%] left-[50%] translate-x-[-50%] max-w-[26rem] bg-brand-mud text-white"
+              content="Vem fazer parte do clube!"
+              link={{
+                href: "https://pay.hotmart.com/X93273748V",
+                rel: "noopener noreferrer nofollow",
+                target: "_blank",
+                "aria-label": "Venha fazer parte do clube!",
+              }}
+            />
+          </div>
+        </div>
+      </article>
+    </SectionLP>
+    <SectionLP
+      variant="bg-white"
+      className="flex flex-col items-center justify-center py-14 my-8 md:px-12 lg:px-0"
+    >
+      <h2
+        data-aos="zoom-in"
+        class="max-w-[32rem] font-montserrat font-black text-center text-3xl text-brand-mud mb-6 lg:text-4xl"
+      >
+        Você está alinhado com os pilares do Clube da Transição?
+      </h2>
+      <div class="flex justify-center"></div>
+      <ul
+        class="max-w-[760px] flex flex-wrap items-center justify-center gap-5"
+      >
+        <li data-aos="flip-up" data-aos-delay="300">
+          <Card
+            heading="h3"
+            content="Arquitetura Ecológica"
+            bgImageFileName="construcao-artesanal-na-ecovila.webp"
+            variant="bg-brand-orange"
+          />
+        </li>
+        <li data-aos="flip-up" data-aos-delay="300">
+          <Card
+            heading="h3"
+            content="Apicultura"
+            bgImageFileName="apicultura-no-projeto-pangeia-e-clube-da-transicao.webp"
+            variant="bg-brand-orange"
+          />
+        </li>
+        <li data-aos="flip-up" data-aos-delay="300">
+          <Card
+            heading="h3"
+            content="Permacultura"
+            bgImageFileName="o-principio-aplicado-da-permacultura.webp"
+            variant="bg-brand-orange"
+          />
+        </li>
+        <li data-aos="flip-up" data-aos-delay="300">
+          <Card
+            heading="h3"
+            content="Economia Conscencional"
+            bgImageFileName="economia-conscencional.webp"
+            variant="bg-brand-orange"
+          />
+        </li>
+        <li data-aos="flip-up" data-aos-delay="300">
+          <Card
+            heading="h3"
+            content="Direito das Ecovilas"
+            bgImageFileName="direito-nas-ecovilas.webp"
+            variant="bg-brand-orange"
+          />
+        </li>
+        <li data-aos="flip-up" data-aos-delay="300">
+          <Card
+            heading="h3"
+            content="Educação Socioecológica"
+            bgImageFileName="educacao-socioecologica.webp"
+            variant="bg-brand-orange"
+          />
+        </li>
+      </ul>
+    </SectionLP>
+    <SectionLP
+      variant="bg-brand-orange"
+      className="py-0"
+      padding="px-3 md:px-4"
+    >
+      <div
+        class="flex items-center font-montserrat text-white space-y-4 py-4 mb-8 md:mb-0 md:py-0 md:px-12 lg:px-0"
+      >
+        <figure
+          data-aos="fade-right"
+          class="hidden md:flex-1 md:block md:min-w-[330px] md:-mt-14 md:pt-4"
+        >
+          <Image
+            src={seuZeSegurandoDiversasFrutosImage}
+            alt="Seu Zé segurando diversos frutos cultivados com os métodos sustentáveis"
+            loading="lazy"
+            decoding="async"
+            class="w-full"
+          />
+          <figcaption class="sr-only">
+            Seu Zé segurando diversos frutos cultivados com os métodos
+            sustentáveis
+          </figcaption>
+        </figure>
+        <div data-aos="fade-left">
+          <h2
+            class="max-w-[26rem] font-black text-lg leading-5 mb-3 lg:mb-4 lg:text-2xl"
+          >
+            O Instituto Filosófico Pangeia é um espaço que serve como um
+            laboratório vivo de experiências sustentáveis:
+          </h2>
+          <ul
+            class="list-inside space-y-4 leading-4 font-medium text-[0.95rem] md:space-y-0 md-lg:text-base lg:text-lg lg:leading-5 lg:space-y-2"
+          >
+            <li data-aos="fade-left" data-aos-delay="100">
+              - Reintegração à Natureza e ao nosso ser Interior
+            </li>
+            <li data-aos="fade-left" data-aos-delay="200">
+              - Jornada de Autoconhecimento
+            </li>
+            <li data-aos="fade-left" data-aos-delay="300">
+              - Somos Uno com a Terra
+            </li>
+            <li data-aos="fade-left" data-aos-delay="400">
+              - Práticas regenerativas
+            </li>
+            <li data-aos="fade-left" data-aos-delay="500">
+              - Inspiração e Coolaboração
+            </li>
+            <li data-aos="fade-left" data-aos-delay="600">
+              - Despertar Criativo
+            </li>
+            <li data-aos="fade-left" data-aos-delay="700">
+              - Cuidados com a Terra e recuperação de solo
+            </li>
+            <li data-aos="fade-left" data-aos-delay="800">
+              - Construção de Espaços
+            </li>
+            <li data-aos="fade-left" data-aos-delay="900">
+              - Revitalização de Áreas
+            </li>
+            <li data-aos="fade-left" data-aos-delay="1000">
+              - Sistema Agroflorestal
+            </li>
+            <li data-aos="fade-left" data-aos-delay="1100">
+              - Construções Ecológicas
+            </li>
+            <li data-aos="fade-left" data-aos-delay="1200">
+              - Tratamento Sustentável de Esgoto
+            </li>
+          </ul>
+        </div>
+      </div>
+    </SectionLP>
+    <SectionLP
+      variant="bg-brand-green"
+      className="flex flex-col font-montserrat items-center justify-center py-4 my-4 md:px-12 lg:px-0"
+    >
+      <h2
+        data-aos="zoom-up"
+        class="max-w-[32rem] font-black uppercase text-center text-3xl text-white mb-12 lg:text-4xl"
+      >
+        Relatos de vivências!
+      </h2>
+      <div
+        class="w-full grid gap-6 place-items-start justify-items-center md:grid-cols-2 lg:grid-cols-3"
+      >
+        <article
+          data-aos="zoom-up"
+          data-aos-delay="200"
+          class="w-full max-w-sm"
+        >
+          <figure
+            class="w-full flex flex-col items-center gap-y-5 justify-center mb-8"
+          >
+            <iframe
+              class="w-full max-w-96 min-h-44 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
+              src="https://www.youtube.com/embed/IFBBz_quvEY?si=UpYLieRyOUKFOC2b"
+              title="A Fabi relata como aprendeu nossas técnicas de Bioconstrução"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+              referrerpolicy="strict-origin-when-cross-origin"
+              loading="lazy"
+              allowfullscreen></iframe>
+            <figcaption
+              data-aos="flip-down"
+              data-aos-delay="300"
+              class="max-w-80 text-lg text-white text-justify md:text-center"
+            >
+              "A Fabi aprendeu nossas técnicas de Bioconstrução para construir
+              um espaço próprio"
+            </figcaption>
+          </figure>
+        </article>
+        <article
+          data-aos="zoom-up"
+          data-aos-delay="200"
+          class="w-full max-w-sm"
+        >
+          <figure
+            class="w-full flex flex-col items-center gap-y-5 justify-center mb-8"
+          >
+            <iframe
+              class="w-full max-w-96 min-h-44 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
+              src="https://www.youtube.com/embed/y5JiJ0Ep2xg?si=fLwsdRLP7KfSPEkk"
+              title="Matheus relata como aprendeu mais sobre plantio e apicultura"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+              referrerpolicy="strict-origin-when-cross-origin"
+              loading="lazy"
+              allowfullscreen></iframe>
+            <figcaption
+              data-aos="flip-down"
+              data-aos-delay="300"
+              class="max-w-80 text-lg text-white text-justify md:text-center"
+            >
+              "Matheus aprendeu mais sobre plantio e apicultura"
+            </figcaption>
+          </figure>
+        </article>
+        <article
+          data-aos="zoom-up"
+          data-aos-delay="200"
+          class="w-full max-w-sm md:col-span-2 lg:col-span-1"
+        >
+          <figure
+            class="w-full flex flex-col items-center gap-y-5 justify-center mb-8"
+          >
+            <iframe
+              class="w-full max-w-96 min-h-44 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
+              src="https://www.youtube.com/embed/QzuJe9IRj5s?si=-eSA-66Uqs66WHRK"
+              title="Riane relata como conheceu a Permacultura e mudou sua forma de pensar sobre construção"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+              referrerpolicy="strict-origin-when-cross-origin"
+              loading="lazy"
+              allowfullscreen></iframe>
+            <figcaption
+              data-aos="flip-down"
+              data-aos-delay="300"
+              class="max-w-80 text-lg text-white text-justify md:text-center"
+            >
+              "A Riane conheceu a Permacultura e transformou sua forma de pensar
+              sobre construção"
+            </figcaption>
+          </figure>
+        </article>
+      </div>
+    </SectionLP>
+    <SectionLP
+      variant="bg-white"
+      paralax="bg-regen-paralax bg-center"
+      opacity="bg-opacity-80"
+      className="bg-brand-orange"
+    >
+      <div
+        class="flex flex-col items-center justify-center py-4 my-4 md:px-12 lg:px-0"
+      >
+        <h2
+          data-aos="zoom-up"
+          class="font-black text-center text-3xl text-white mb-6 md:text-4xl lg:text-5xl"
+        >
+          Regeneração<br />
+          <div class="inline-block" data-aos="flip-down" data-aos-delay="200">
+            Pessoal,
+          </div>
+          <div class="inline-block" data-aos="flip-down" data-aos-delay="300">
+            Espiritual
+          </div> &
+          <div class="inline-block" data-aos="flip-down" data-aos-delay="400">
+            Financeira
+          </div>
+        </h2>
+        <div data-aos="zoom-up" class="w-full flex items-center justify-center">
+          <CtaButton
+            className="max-w-[26rem] bg-brand-mud text-white text-xl uppercase p-6 md:p-6 md:min-w-72 lg:min-w-[26rem] lg:p-6"
+            content="Faça parte dessa mudança!"
+            link={{
+              href: "https://pay.hotmart.com/X93273748V",
+              rel: "noopener noreferrer nofollow",
+              target: "_blank",
+              "aria-label": "Venha fazer parte do clube!",
+            }}
+          />
+        </div>
+      </div>
+    </SectionLP>
+    <SectionLP variant="bg-white">
+      <div data-aos="zoom-up" class="w-full flex justify-center mt-6 mb-12">
+        <h2
+          class="max-w-[32rem] font-montserrat font-black text-center text-3xl leading-8 text-brand-mud lg:text-[2.5rem] lg:leading-10"
+        >
+          Temas de aprendizado:
+        </h2>
+      </div>
+      <div
+        class="grid grid-cols-2 gap-x-6 gap-y-12 place-items-center place-content-center mb-12 md:grid-cols-3"
+      >
+        <EducatorCard
+          image={{
+            src: seuZeAlegoriaDaNovaEraCaminhosDaTransicao,
+            alt: "Rosto de Seu Zé",
+            loading: "lazy",
+            decoding: "async",
+          }}
+          imageCaption="Rosto do colaborador/educador Seu Zé"
+          heading="h3"
+          name="Seu Zé"
+          content="Alegoria da Nova Era: Caminhos da Transição"
+        />
+        <EducatorCard
+          image={{
+            src: isabelaFernandesConversasAyurvedicas,
+            alt: "Rosto da colaboradora/educadora Isabela Fernandes",
+            loading: "lazy",
+            decoding: "async",
+          }}
+          imageCaption="Rosto do colaborador/educador Isabela Fernandes"
+          heading="h3"
+          name="Isabela Fernandes"
+          content="Conversas Ayurvédicas"
+        />
+        <EducatorCard
+          image={{
+            src: matheusBarbosaEducacaoAmbientalParaPaisEFilhos,
+            alt: "Rosto do colaborador/educador Matheus Barbosa",
+            loading: "lazy",
+            decoding: "async",
+          }}
+          imageCaption="Rosto do colaborador/educador Matheus Barbosa"
+          heading="h3"
+          name="Matheus Barbosa"
+          content="Educação Ambiental para Pais e Filhos"
+        />
+        <EducatorCard
+          image={{
+            src: rafaelPredeschiArquiteturaSustentavelEBioarquitetura,
+            alt: "Rosto do colaborador/educador Rafael Predeschi",
+            loading: "lazy",
+            decoding: "async",
+          }}
+          imageCaption="Rosto do colaborador/educador Rafael Predeschi"
+          heading="h3"
+          name="Rafael Predeschi"
+          content="Arquitetura Sustentável e Bioarquitetura"
+        />
+        <EducatorCard
+          image={{
+            src: andreBuraEconomiaDoDespertar,
+            alt: "Rosto do colaborador/educador André Bura",
+            loading: "lazy",
+            decoding: "async",
+          }}
+          imageCaption="Rosto do colaborador/educador André Bura"
+          heading="h3"
+          name="André Bura"
+          content="Economia do Despertar"
+        />
+        <EducatorCard
+          image={{
+            src: jordaoDireitoParaAsEcovilas,
+            alt: "Rosto do colaborador/educador Jordão",
+            loading: "lazy",
+            decoding: "async",
+          }}
+          imageCaption="Rosto do colaborador/educador Jordão"
+          heading="h3"
+          name="Jordão"
+          content="Direito para Ecovilas"
+        />
+        <EducatorCard
+          image={{
+            src: agtaRobertaConhecendoARosaDoDeserto,
+            alt: "Rosto da colaboradora/educadora Agta Roberta",
+            loading: "lazy",
+            decoding: "async",
+          }}
+          imageCaption="Rosto da colaboradora/educadora Agta Roberta"
+          heading="h3"
+          name="Agta Roberta"
+          content="Conhecendo a Rosa do Deserto"
+          colsSpan="col-span-2 md:col-span-3"
+        />
+      </div>
+      <div class="relative flex justify-center items-center">
+        <CtaButton
+          className="absolute right-[50%] left-[50%] translate-x-[-50%] max-w-[26rem] bg-brand-mud text-white"
+          content="Vem fazer parte do clube!"
+          link={{
+            href: "https://pay.hotmart.com/X93273748V",
+            rel: "noopener noreferrer nofollow",
+            target: "_blank",
+            "aria-label": "Venha fazer parte do clube!",
+          }}
+        />
+      </div>
+    </SectionLP>
+    <SectionLP
+      variant="bg-white"
+      paralax="bg-regen-paralax bg-center"
+      opacity="bg-opacity-80"
+      className="bg-brand-orange flex flex-col items-center justify-center md:px-12 lg:px-0"
+    >
+      <div data-aos="zoom-up" class="w-full flex justify-center my-12">
+        <h2
+          class="max-w-[32rem] font-montserrat font-black text-center text-3xl leading-8 text-white lg:text-[2.5rem] lg:leading-10"
+        >
+          O Clube é para você que:
+        </h2>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 font-montserrat text-white mb-16">
+        <ul
+          class="list-inside space-y-4 leading-4 font-medium text-lg lg:text-lg lg:leading-5 lg:space-y-2"
+        >
+          <li data-aos="fade-right" data-aos-delay="100">
+            - Deseja ser um agente de mudança, acreditando que a transformação
+            externa começa por mudar a si mesmo
+          </li>
+          <li data-aos="fade-right" data-aos-delay="200">
+            - Busca encontrar sua voz interior, através da integração à natureza
+          </li>
+          <li data-aos="fade-right" data-aos-delay="300">
+            - Quer aprender a colocar em prática habilidades como plantar seu
+            alimento
+          </li>
+          <li data-aos="fade-right" data-aos-delay="400">
+            - Deseja construir com os recursos da natureza
+          </li>
+          <li data-aos="fade-right" data-aos-delay="500">
+            - Busca alimentação conciente: preparare sua comida com
+            discernimento do que seu corpo pede
+          </li>
+          <li data-aos="fade-right" data-aos-delay="600">
+            - Quer implantar um apiário
+          </li>
+        </ul>
+        <ul
+          class="list-inside space-y-4 leading-4 font-medium text-lg lg:text-lg lg:leading-5 lg:space-y-2"
+        >
+          <li data-aos="fade-left" data-aos-delay="700">
+            - Quer encontrar sua tribo, sua família de alma, pessoas que passam
+            ou já passaram pelo mesmo desafio que você
+          </li>
+          <li data-aos="fade-left" data-aos-delay="800">
+            - Busca entendimento dos mecanismos de alienação do planeta
+          </li>
+          <li data-aos="fade-left" data-aos-delay="900">
+            - Deseja encontrar o que ama fazer; ou se já encontrou, busca
+            orientação do caminho a ser percorrido para alcançar a saúde de
+            sustento fazendo o ama
+          </li>
+          <li data-aos="fade-left" data-aos-delay="1000">
+            - Deseja empreender com alma, respeitando a si mesmo e a terra
+          </li>
+        </ul>
+      </div>
+      <div class="w-full flex items-center justify-center">
+        <CtaButton
+          className="max-w-[26rem] bg-brand-mud text-white text-xl uppercase p-6 md:p-6 md:min-w-72 lg:min-w-[26rem] lg:p-6"
+          content="Faça parte dessa mudança!"
+          link={{
+            href: "https://pay.hotmart.com/X93273748V",
+            rel: "noopener noreferrer nofollow",
+            target: "_blank",
+            "aria-label": "Venha fazer parte do clube!",
+          }}
+        />
+      </div>
+    </SectionLP>
   </main>
 </Layout>

@@ -24,7 +24,6 @@ export default tseslint.config(
       "comma-dangle": ["error", "always-multiline"],
       "quotes": ["error", "double"],
       "indent": ["error", 2],
-      "max-len": ["error", 80],
       "no-console": "warn",
       "no-unused-vars": "warn",
       "@typescript-eslint/triple-slash-reference": "off",
