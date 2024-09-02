@@ -11,7 +11,9 @@ const { className, opacity, paralax, padding, variant } = Astro.props;
 ---
 
 <section class={`flex align-center justify-center ${variant}`}>
-  <div class={`flex align-center justify-center min-w-full ${paralax}`}>
+  <div
+    class={`flex align-center justify-center min-w-full ${paralax} bg-center bg-no-repeat bg-cover`}
+  >
     {
       opacity === undefined ? (
         <div

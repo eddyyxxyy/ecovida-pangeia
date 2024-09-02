@@ -31,6 +31,7 @@ const { videoSrc, videoHeight = "16rem", className } = Astro.props;
       iframe.src = `https://www.youtube-nocookie.com/embed/${this.extractVideoId(this.getAttribute("data-src")!)}`;
       iframe.allow = this.getAttribute("allow")!;
       iframe.allowFullscreen = true;
+      iframe.loading = "lazy";
       iframe.referrerPolicy = this.getAttribute(
         "referrerpolicy",
       )! as ReferrerPolicy;
