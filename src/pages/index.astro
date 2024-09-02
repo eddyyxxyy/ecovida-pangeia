@@ -7,6 +7,7 @@ import CtaButton from "@components/CtaButton.astro";
 import SectionLP from "@components/SectionLP.astro";
 import Card from "@components/Card.astro";
 import EducatorCard from "@components/EducatorCard.astro";
+import LazyIframe from "@components/LazyIframe.astro";
 
 import logoPangeiaImage from "@assets/logo_do_projeto_pangeia_ecoeduca.webp";
 import seuZeIsabelaFernandesImage from "@assets/seu-ze-e-isabela-fernandes.webp";
@@ -125,13 +126,10 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
       </h2>
       <article data-aos="zoom-out-up" data-aos-delay="500" class="w-full">
         <figure class="w-full flex items-center justify-center mb-8">
-          <iframe
-            class="w-full max-w-96 min-h-64 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
-            src="https://www.youtube-nocookie.com/embed/NX6X-Y67y9c?si=dQUnLx0cSWV8l4Xc"
-            title="Seu Zé apresenta o Clube da Transição"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
+          <LazyIframe
+            videoSrc="https://www.youtube.com/watch?v=NX6X-Y67y9c"
+            className="w-full max-w-96 min-h-64 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
+          />
           <figcaption class="sr-only">
             Seu Zé apresenta o Clube da Transição, um projeto do Pangeia
             Ecovida, que se localiza em Diamantina - Minas Gerais.
@@ -345,14 +343,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
           <figure
             class="w-full flex flex-col items-center gap-y-5 justify-center mb-8"
           >
-            <iframe
-              class="w-full max-w-96 min-h-44 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
-              src="https://www.youtube.com/embed/IFBBz_quvEY?si=UpYLieRyOUKFOC2b"
-              title="A Fabi relata como aprendeu nossas técnicas de Bioconstrução"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-              referrerpolicy="strict-origin-when-cross-origin"
-              loading="lazy"
-              allowfullscreen></iframe>
+            <LazyIframe
+              videoSrc="https://www.youtube.com/watch?v=IFBBz_quvEY"
+              videoHeight="11rem"
+              className="w-full max-w-96 min-h-44 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
+            />
             <figcaption
               data-aos="flip-down"
               data-aos-delay="300"
@@ -371,14 +366,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
           <figure
             class="w-full flex flex-col items-center gap-y-5 justify-center mb-8"
           >
-            <iframe
-              class="w-full max-w-96 min-h-44 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
-              src="https://www.youtube.com/embed/y5JiJ0Ep2xg?si=fLwsdRLP7KfSPEkk"
-              title="Matheus relata como aprendeu mais sobre plantio e apicultura"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-              referrerpolicy="strict-origin-when-cross-origin"
-              loading="lazy"
-              allowfullscreen></iframe>
+            <LazyIframe
+              videoSrc="https://www.youtube.com/watch?v=y5JiJ0Ep2xg"
+              videoHeight="11rem"
+              className="w-full max-w-96 min-h-44 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
+            />
             <figcaption
               data-aos="flip-down"
               data-aos-delay="300"
@@ -396,14 +388,11 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
           <figure
             class="w-full flex flex-col items-center gap-y-5 justify-center mb-8"
           >
-            <iframe
-              class="w-full max-w-96 min-h-44 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
-              src="https://www.youtube.com/embed/QzuJe9IRj5s?si=-eSA-66Uqs66WHRK"
-              title="Riane relata como conheceu a Permacultura e mudou sua forma de pensar sobre construção"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
-              referrerpolicy="strict-origin-when-cross-origin"
-              loading="lazy"
-              allowfullscreen></iframe>
+            <LazyIframe
+              videoSrc="https://www.youtube.com/watch?v=QzuJe9IRj5s"
+              videoHeight="11rem"
+              className="w-full max-w-96 min-h-44 block rounded-3xl md:max-w-[32rem] lg:max-w-[34rem]"
+            />
             <figcaption
               data-aos="flip-down"
               data-aos-delay="300"
