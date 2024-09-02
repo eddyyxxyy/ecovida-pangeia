@@ -10,14 +10,77 @@ interface Props {
   pageTitle: string;
   pageDescription: string;
   canonicalUrl: URL;
+  preloadImages?: string[];
 }
 
-const { pageTitle, pageDescription, canonicalUrl } = Astro.props;
+const { pageTitle, pageDescription, canonicalUrl, preloadImages } = Astro.props;
 ---
 
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
+    {
+      preloadImages &&
+        preloadImages.map((imageSrc) => (
+          <link rel="preload" as="image" href={imageSrc} />
+        ))
+    }
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Montserrat-Black.woff"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Montserrat-Bold.woff"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Montserrat-Medium.woff"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Montserrat-Regular.woff"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Montserrat-SemiBold.woff"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Roboto-Black.woff"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Roboto-Medium.woff"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/fonts/Roboto-Regular.woff"
+      type="font/woff"
+      crossorigin="anonymous"
+    />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
