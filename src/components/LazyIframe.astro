@@ -1,0 +1,108 @@
+---
+interface Props {
+  videoSrc: string;
+  videoHeight?: string;
+  className: string;
+}
+
+const { videoSrc, videoHeight = "16rem", className } = Astro.props;
+---
+
+<lazy-iframe
+  data-src={videoSrc}
+  data-height={videoHeight}
+  class={className}
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"
+  referrerpolicy="strict-origin-when-cross-origin"></lazy-iframe>
+
+<script>
+  class LazyIframe extends HTMLElement {
+    constructor() {
+      super();
+      this.attachShadow({ mode: "open" });
+    }
+
+    connectedCallback() {
+      this.render();
+    }
+
+    loadIframe() {
+      const iframe = document.createElement("iframe");
+      iframe.src = `https://www.youtube-nocookie.com/embed/${this.extractVideoId(this.getAttribute("data-src")!)}`;
+      iframe.allow = this.getAttribute("allow")!;
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = this.getAttribute(
+        "referrerpolicy",
+      )! as ReferrerPolicy;
+      iframe.style.width = "100%";
+      iframe.style.height = this.getAttribute("data-height")!;
+      iframe.style.borderRadius = "inherit"; // Inherit border radius from parent
+      iframe.style.border = "none";
+      this.shadowRoot!.querySelector(".iframe-container")!.appendChild(iframe);
+      this.shadowRoot!.querySelector(".thumbnail-container")!.remove();
+    }
+
+    extractVideoId(url: string): string {
+      const urlObj = new URL(url);
+      return (
+        urlObj.searchParams.get("v") || urlObj.pathname.split("/").pop() || ""
+      );
+    }
+
+    render() {
+      const videoUrl = this.getAttribute("data-src")!;
+      const videoHeight = this.getAttribute("data-height")!;
+      const videoId = this.extractVideoId(videoUrl);
+      const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+      this.shadowRoot!.innerHTML = `
+      <style>
+        .iframe-container {
+          width: 100%;
+          height: 100%;
+          min-height: ${videoHeight};
+          display: block;
+          border-radius: inherit; /* Inherit border radius from parent */
+          overflow: hidden;
+        }
+        .thumbnail-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          min-height: ${videoHeight};
+          display: block;
+          border-radius: inherit; /* Inherit border radius from parent */
+          background: url(${thumbnailUrl}) center center / cover no-repeat;
+          cursor: pointer;
+        }
+        .play-button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          background: rgba(0, 0, 0, 0.5);
+          color: white;
+          border: none;
+          border-radius: 50%;
+          padding: 1rem;
+          cursor: pointer;
+        }
+      </style>
+      <div class="iframe-container">
+        <div class="thumbnail-container" onclick="this.getRootNode().host.loadIframe()">
+          <button class="play-button">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+            </svg>
+        </button>
+        </div>
+      </div>
+    `;
+    }
+  }
+
+  customElements.define("lazy-iframe", LazyIframe);
+</script>
