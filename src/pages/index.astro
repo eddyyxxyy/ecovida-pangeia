@@ -35,6 +35,10 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
   pageTitle={pageTitle}
   pageDescription={pageDescription}
   canonicalUrl={canonicalUrl}
+  preloadImages={[
+    "/construcao-artesanal-na-ecovila.webp",
+    logoPangeiaImage.src,
+  ]}
 >
   <main slot="main">
     <header
