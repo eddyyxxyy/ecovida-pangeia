@@ -87,6 +87,12 @@ const { pageTitle, pageDescription, canonicalUrl, preloadImages } = Astro.props;
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content="https://ecovidapangeia.com/logo.webp" />
+    <meta property="og:url" content="https://ecovidapangeia.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="pt_BR" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={pageDescription} />
@@ -97,7 +103,7 @@ const { pageTitle, pageDescription, canonicalUrl, preloadImages } = Astro.props;
         "@type": "Organization",
         name: "Clube da Transição",
         url: "https://ecovidapangeia.com/",
-        logo: "https://ecovidapangeia.com/logo-pangeia.webp",
+        logo: "https://ecovidapangeia.com/logo.webp",
         sameAs: ["https://www.instagram.com/ecovidapangeia/"],
         description:
           "Junte-se ao Clube da Transição para " +
