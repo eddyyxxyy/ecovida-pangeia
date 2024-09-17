@@ -5,15 +5,20 @@ import sitemap from "@astrojs/sitemap";
 
 import vercel from "@astrojs/vercel/serverless";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://ecovidapangeia.com",
 
   integrations: [
-    tailwind(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
     sitemap({
       lastmod: new Date(),
     }),
+    react(),
   ],
 
   output: "hybrid",
