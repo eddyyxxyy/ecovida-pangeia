@@ -19,6 +19,8 @@ import rafaelPredeschiArquiteturaSustentavelEBioarquitetura from "@/assets/rafae
 import andreBuraEconomiaDoDespertar from "@/assets/andre-bura-economia-do-despertar.webp";
 import jordaoDireitoParaAsEcovilas from "@/assets/jordao-direito-para-as-ecovilas.webp";
 import agtaRobertaConhecendoARosaDoDeserto from "@/assets/agta-roberta-conhecendo-a-rosa-do-deserto.webp";
+import contatarVoceImage from "@/assets/contatar-voce.svg";
+import { LeadForm } from "@/components/home/LeadForm";
 
 const pageTitle =
   "Desperte sua consciência com o Clube da Transição! Acesse e faça parte!";
@@ -627,6 +629,33 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
             "aria-label": "Venha fazer parte do clube!",
           }}
         />
+      </div>
+    </SectionLP>
+    <SectionLP variant="bg-brand-green">
+      <div class="flex flex-col gap-4 items-center justify-center">
+        <h2
+          class="max-w-[32rem] font-montserrat font-black text-center text-3xl leading-8 text-white lg:text-[2.5rem] lg:leading-10"
+        >
+          Quer saber mais sobre ser um fundador?
+        </h2>
+        <p class="text-white text-center max-w-[24rem]">
+          Então é só preencher o formulário abaixo com suas informações e
+          aguardar.
+        </p>
+      </div>
+      <div
+        class="mx-auto max-w-96 flex flex-col-reverse gap-4 items-center justify-between p-4 bg-white mt-6 rounded-lg shadow-2xl md:gap-16 md:flex-row md:max-w-screen-md md:py-8 lg:max-w-screen-lg"
+      >
+        <Image
+          src={contatarVoceImage}
+          alt=""
+          class="w-1/2 mt-8 max-w-96 lg:mx-auto"
+        />
+        <div
+          class="flex-1 w-full lg:max-w-sm lg:mx-auto md:p-4 lg:p-8 rounded-lg shadow-2xl"
+        >
+          <LeadForm client:visible />
+        </div>
       </div>
     </SectionLP>
   </main>
