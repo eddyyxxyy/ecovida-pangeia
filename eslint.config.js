@@ -27,6 +27,8 @@ export default tseslint.config(
       "no-console": "warn",
       "no-unused-vars": "warn",
       "@typescript-eslint/triple-slash-reference": "off",
+      "@typescript-eslint/no-misused-promises": "off",
+      "@typescript-eslint/no-empty-object-type": "off",
     },
   },
   {
