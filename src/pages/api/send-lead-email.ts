@@ -6,14 +6,15 @@ import dotenv from "dotenv";
 import { z } from "zod";
 
 import { formSchema } from "@/components/home/LeadFormSchema";
+import { asHtml } from "transactional/emails/clube-da-transicao-lead-email";
 
 dotenv.config();
 
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
-  const name = formData.get("name") as string;
-  const email = formData.get("email") as string;
-  const phone = formData.get("phone") as string;
+  let name = formData.get("name") as string;
+  let email = formData.get("email") as string;
+  let phone = formData.get("phone") as string;
 
   const data = { name, email, phone };
 
@@ -26,6 +27,14 @@ export const POST: APIRoute = async ({ request }) => {
     return new Response("Erro de validação desconhecido.", { status: 400 });
   }
 
+  name = name.trim();
+  email = email.trim();
+  phone = phone
+    .trim()
+    .replaceAll("+", "")
+    .replaceAll(" ", "")
+    .replaceAll("-", "");
+
   const transporter = nodemailer.createTransport({
     host: "smtp.resend.com",
     secure: true,
@@ -36,11 +45,13 @@ export const POST: APIRoute = async ({ request }) => {
     },
   });
 
+  const emailHtml = await asHtml({ name, userEmail: email, userPhone: phone });
+
   const mailOptions = {
     from: "clubedatransicaoleads@ecovidapangeia.com",
-    to: "delivered@resend.dev",
+    to: "matiasestrategiadigital@gmail.com",
     subject: `${name} tem interesse em se tornar fundador`,
-    text: `name: ${name}\nemail: ${email}\nphone: ${phone}`,
+    html: emailHtml,
   };
 
   try {
