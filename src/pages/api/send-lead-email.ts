@@ -49,7 +49,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   const mailOptions = {
     from: "clubedatransicaoleads@ecovidapangeia.com",
-    to: "matiasestrategiadigital@gmail.com",
+    to: "pangeiaecoeduca@gmail.com",
     subject: `${name} tem interesse em se tornar fundador`,
     html: emailHtml,
   };
