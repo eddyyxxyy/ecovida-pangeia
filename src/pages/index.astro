@@ -21,6 +21,7 @@ import jordaoDireitoParaAsEcovilas from "@/assets/jordao-direito-para-as-ecovila
 import agtaRobertaConhecendoARosaDoDeserto from "@/assets/agta-roberta-conhecendo-a-rosa-do-deserto.webp";
 import contatarVoceImage from "@/assets/contatar-voce.svg";
 import { LeadForm } from "@/components/home/LeadForm";
+import { CollapsiblePillars } from "@/components/home/CollapsiblePillars";
 
 const pageTitle =
   "Desperte sua consciência com o Clube da Transição! Acesse e faça parte!";
@@ -200,7 +201,6 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
       >
         Você está alinhado com os pilares do Clube da Transição?
       </h2>
-      <div class="flex justify-center"></div>
       <ul
         class="max-w-[760px] flex flex-wrap items-center justify-center gap-5"
       >
@@ -247,12 +247,18 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
         <li data-aos="flip-up" data-aos-delay="300">
           <Card
             heading="h3"
-            content="Educação Socioecológica"
+            content="Educação Ambiental"
             bgImageFileName="educacao-socioecologica.webp"
             variant="bg-brand-orange"
           />
         </li>
       </ul>
+      <div
+        data-aos="fade-up"
+        class="w-full mt-12 sm:max-w-[500px] md:max-w-[760px]"
+      >
+        <CollapsiblePillars client:load />
+      </div>
     </SectionLP>
     <SectionLP
       variant="bg-brand-orange"
@@ -634,9 +640,9 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     <SectionLP variant="bg-brand-green">
       <div class="flex flex-col gap-4 items-center justify-center">
         <h2
-          class="max-w-[32rem] font-montserrat font-black text-center text-3xl leading-8 text-white lg:text-[2.5rem] lg:leading-10"
+          class="max-w-[34rem] font-montserrat font-black text-center text-3xl leading-8 text-white lg:text-[2.5rem] lg:leading-10"
         >
-          Quer saber mais sobre ser um fundador?
+          Quer saber mais sobre como ser um fundador?
         </h2>
         <p class="text-white text-center max-w-[24rem]">
           Então é só preencher o formulário abaixo com suas informações e
