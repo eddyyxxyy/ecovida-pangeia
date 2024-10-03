@@ -1,11 +1,11 @@
 ---
-import { Schema } from "astro-seo-schema";
 import "aos/dist/aos.css";
 
 import "@/styles/fonts.css";
 import "@/styles/globals.css";
 
 import Footer from "@/components/Footer.astro";
+import JsonLdSchema from "@/components/JsonLdSchema.astro";
 
 interface Props {
   pageTitle: string;
@@ -98,20 +98,7 @@ const { pageTitle, pageDescription, canonicalUrl, preloadImages } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={pageDescription} />
     <title>{pageTitle}</title>
-    <Schema
-      item={{
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: "Clube da Transição",
-        url: "https://ecovidapangeia.com/",
-        logo: "https://ecovidapangeia.com/logo.webp",
-        sameAs: ["https://www.instagram.com/ecovidapangeia/"],
-        description:
-          "Junte-se ao Clube da Transição para " +
-          "autoconhecimento, sustentabilidade e práticas regenerativas. " +
-          "Seja um cofundador e contribua para um futuro mais consciente.",
-      }}
-    />
+    <JsonLdSchema />
     <script>
       import AOS from "aos";
 
