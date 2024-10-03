@@ -23,6 +23,7 @@ import contatarVoceImage from "@/assets/contatar-voce.svg";
 
 import { LeadForm } from "@/components/home/LeadForm";
 import { CollapsiblePillars } from "@/components/home/CollapsiblePillars";
+import { LearningThemesAccordion } from "@/components/home/LearningThemesAccordion";
 
 const pageTitle =
   "Desperte sua consciência com o Clube da Transição! Acesse e faça parte!";
@@ -552,6 +553,18 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
           content="Conhecendo a Rosa do Deserto"
           colsSpan="col-span-2 md:col-span-3"
         />
+      </div>
+      <div class="my-12 pt-6">
+        <div data-aos="zoom-up" class="w-full flex justify-center mt-6 mb-12">
+          <h3
+            class="max-w-[32rem] font-montserrat font-black text-center text-2xl leading-8 text-brand-mud lg:text-3xl lg:leading-10"
+          >
+            Conheça melhor sobre os temas e quem os ensinam:
+          </h3>
+        </div>
+        <div class="max-w-screen-md mx-auto">
+          <LearningThemesAccordion client:load />
+        </div>
       </div>
       <div class="relative flex justify-center items-center">
         <CtaButton
