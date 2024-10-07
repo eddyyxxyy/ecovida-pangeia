@@ -24,6 +24,7 @@ import contatarVoceImage from "@/assets/contatar-voce.svg";
 import { LeadForm } from "@/components/home/LeadForm";
 import { CollapsiblePillars } from "@/components/home/CollapsiblePillars";
 import { LearningThemesAccordion } from "@/components/home/LearningThemesAccordion";
+import { ProductAndBenefitsCards } from "@/components/home/ProductAndBenefitsCards";
 
 const pageTitle =
   "Desperte sua consciência com o Clube da Transição! Acesse e faça parte!";
@@ -563,7 +564,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
           </h3>
         </div>
         <div class="max-w-screen-md mx-auto">
-          <LearningThemesAccordion client:load />
+          <LearningThemesAccordion client:visible />
         </div>
       </div>
       <div class="relative flex justify-center items-center">
@@ -651,8 +652,34 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
         />
       </div>
     </SectionLP>
+    <SectionLP variant="bg-white">
+      <div data-aos="zoom-up" class="w-full flex justify-center mt-6 mb-12">
+        <h2
+          class="max-w-[32rem] font-montserrat font-black text-center text-3xl leading-8 text-brand-mud lg:text-[2.5rem] lg:leading-10"
+        >
+          O que oferecemos para que você <span class="text-brand-orange">se torne um Fundador do Clube</span>:
+        </h2>
+      </div>
+      <div class="p-4 border border-brand-green rounded-lg shadow">
+        <p class="font-medium text-brand-green text-lg md:text-xl">
+          Além de um plano anual com parcelamento em 12x sem juros, também daremos a você
+          uma garantia de 7 dias e flexibilidade na hora de adquirir seu acesso aos
+          nossos materiais (audio, vídeo e textual) com diversas formas de pagamento.
+        </p>
+      </div>
+      <div class="my-6 lg:mb-12">
+        <h3
+          class="max-w-[32rem] font-black text-brand-mud text-2xl text-center leading-8 mx-auto lg:text-4xl"
+        >
+        Benefícios e <span class="text-brand-orange">acesso</span>:
+        </h3>
+      </div>
+      <div class="grid gap-4 md:grid-cols-3">
+        <ProductAndBenefitsCards client:visible />
+      </div>
+    </SectionLP>
     <SectionLP variant="bg-brand-green">
-      <div class="flex flex-col gap-4 items-center justify-center">
+      <div class="flex flex-col gap-4 items-center justify-center" id="quero-saber-mais-sobre-ser-fundador">
         <h2
           class="max-w-[34rem] font-montserrat font-black text-center text-3xl leading-8 text-white lg:text-[2.5rem] lg:leading-10"
         >
