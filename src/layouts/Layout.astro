@@ -1,5 +1,4 @@
 ---
-import { Schema } from "astro-seo-schema";
 import "aos/dist/aos.css";
 
 import "@/styles/fonts.css";
@@ -26,62 +25,6 @@ const { pageTitle, pageDescription, canonicalUrl, preloadImages } = Astro.props;
           <link rel="preload" as="image" href={imageSrc} />
         ))
     }
-    <link
-      rel="preload"
-      as="font"
-      href="/fonts/Montserrat-Black.woff"
-      type="font/woff"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      href="/fonts/Montserrat-Bold.woff"
-      type="font/woff"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      href="/fonts/Montserrat-Medium.woff"
-      type="font/woff"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      href="/fonts/Montserrat-Regular.woff"
-      type="font/woff"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      href="/fonts/Montserrat-SemiBold.woff"
-      type="font/woff"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      href="/fonts/Roboto-Black.woff"
-      type="font/woff"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      href="/fonts/Roboto-Medium.woff"
-      type="font/woff"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="preload"
-      as="font"
-      href="/fonts/Roboto-Regular.woff"
-      type="font/woff"
-      crossorigin="anonymous"
-    />
     <link rel="canonical" href={canonicalUrl} />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
@@ -89,29 +32,17 @@ const { pageTitle, pageDescription, canonicalUrl, preloadImages } = Astro.props;
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:title" content={pageTitle} />
+    <meta property="og:site_name" content="Ecovida Pangeia" />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:image" content="https://ecovidapangeia.com/logo.webp" />
     <meta property="og:url" content="https://ecovidapangeia.com" />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={pageDescription} />
     <title>{pageTitle}</title>
-    <Schema
-      item={{
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: "Clube da Transição",
-        url: "https://ecovidapangeia.com/",
-        logo: "https://ecovidapangeia.com/logo.webp",
-        sameAs: ["https://www.instagram.com/ecovidapangeia/"],
-        description:
-          "Junte-se ao Clube da Transição para " +
-          "autoconhecimento, sustentabilidade e práticas regenerativas. " +
-          "Seja um cofundador e contribua para um futuro mais consciente.",
-      }}
-    />
+    <slot name="json-ld-data" />
     <script>
       import AOS from "aos";
 

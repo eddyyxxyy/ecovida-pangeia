@@ -1,0 +1,268 @@
+---
+import { Schema } from "astro-seo-schema";
+
+const siteUrl = Astro.site?.href;
+---
+
+<Schema
+  item={{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Clube da Transição",
+    description:
+      "O Clube da Transição é uma iniciativa do Instituto Filosófico de Cultura Regenerativa Ecovida Pangeia, que consiste em uma comunidade digital, acessível em forma de infoproduto.",
+    url: siteUrl,
+    image: `${siteUrl}/clube-da-transicao-comunidade-virtual.jpeg`,
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "BRL",
+      price: "432.00",
+      url: "https://pay.hotmart.com/X93273748V?bid=1727540329234",
+      itemCondition: "https://schema.org/NewCondition",
+      availability: "https://schema.org/InStock",
+      description: "Pacote Anual: R$ 432,00, dividido em até 12x sem juros.",
+      acceptedPaymentMethod: [
+        {
+          "@type": "PaymentMethod",
+          name: "Cartão de Crédito",
+        },
+        {
+          "@type": "PaymentMethod",
+          name: "Cartão de Débito",
+        },
+        {
+          "@type": "PaymentMethod",
+          name: "PIX",
+        },
+        {
+          "@type": "PaymentMethod",
+          name: "Boleto",
+        },
+      ],
+      warranty: {
+        "@type": "WarrantyPromise",
+        durationOfWarranty: {
+          "@type": "QuantitativeValue",
+          value: 7,
+          unitText: "DAYS",
+        },
+        description: "Garantia de 7 dias para reembolso.",
+      },
+      category: "Cursos Online",
+    },
+    brand: {
+      "@type": "Brand",
+      name: "Instituto Filosófico de Cultura Regenerativa Ecovida Pangeia",
+      url: "https://ecovidapangeia.com",
+      logo: "https://ecovidapangeia.com/logo.webp",
+      sameAs: [
+        "https://www.instagram.com/ecovidapangeia/",
+        "https://www.youtube.com/@ecovidapangeia2670",
+      ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Sítio Pangeia, sem número",
+        addressLocality: "Couto de Magalhães de Minas",
+        addressRegion: "MG",
+        postalCode: "39.188-000",
+        addressCountry: "BR",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Customer Service",
+        email: "institutofilosoficopangeia@gmail.com",
+        telephone: "(38) 9935-2566",
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Onde comprar o produto?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O produto está disponível para compra no seguinte endereço eletrônico: https://pay.hotmart.com/X93273748V?bid=1727540329234.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "O que posso esperar ao me tornar um membro?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Ao se tornar membro do Clube da Transição, você se torna automaticamente um associado do Instituto Pangeia. Isso garante acesso a conteúdos exclusivos sobre práticas sustentáveis e a encontros com especialistas que compartilham suas vivências. O clube não é um curso, mas um espaço contínuo de aprendizado e troca. Como associado, você também terá descontos em oficinas e vivências do Instituto, com a agenda divulgada periodicamente, permitindo aprofundar seu conhecimento e se conectar de maneira prática com a comunidade.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Como funciona o conteúdo do clube?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Os conteúdos incluem vídeos, e-books e podcasts, além de interações no grupo exclusivo do Telegram, onde compartilhamos experiências e práticas da comunidade.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Quais formas de pagamento são aceitas?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Aceitamos pagamentos por PIX, cartão de crédito, débito, boleto e créditos da Hotmart.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Como acessar o produto?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Após a compra, os membros receberão um link de acesso ao Clube da Transição via e-mail.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "O que é o Clube da Transição?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O Clube da Transição é uma comunidade digital que promove o autoconhecimento, sustentabilidade e práticas regenerativas.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Qual a duração do curso?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "O curso é contínuo, permitindo acesso às aulas conforme a disponibilidade do aluno.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Qual é a política de garantia?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Oferecemos uma garantia de 7 dias, com direito a reembolso.",
+          },
+        },
+      ],
+    },
+  }}
+/>
+
+<Schema
+  item={{
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: "Curso do Clube da Transição",
+    description: "Curso abrangente que abrange autoconhecimento, sustentabilidade e práticas regenerativas.",
+    provider: {
+      "@type": "EducationalOrganization",
+      name: "Instituto Filosófico de Cultura Regenerativa Ecovida Pangeia",
+    },
+    courseMode: "Online",
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "Online",
+      startDate: new Date().toISOString(), // Data atual para início imediato
+      endDate: "null", // Sem data de término
+      courseWorkload: "P1Y", // Duração do curso
+      instructor: [
+        {
+          "@type": "Person",
+          name: "Isabela Fernandes",
+          jobTitle: "Terapeuta Ayurveda e Advogada",
+          email: "isabelalfernandes26@gmail.com",
+          telephone: "(34) 99679-2513",
+          url: "https://www.instagram.com/isabelalfernandes_/",
+          description: "Conversas Ayurvédicas - Isabela apresenta práticas de Ayurveda que promovem o autoconhecimento e a saúde integral.",
+        },
+        {
+          "@type": "Person",
+          name: "Zé Veramato",
+          jobTitle: "Permacultor e Facilitador",
+          email: "raphaelvarela3@gmail.com",
+          telephone: "(38) 99935-2566",
+          url: "https://www.instagram.com/jose_veramato/",
+          description: "Alegoria da Nova Era: Caminhos da Transição - Zé fala sobre permacultura e práticas sustentáveis.",
+        },
+        {
+          "@type": "Person",
+          name: "Jordão Vieira",
+          jobTitle: "Especialista em Sustentabilidade",
+          email: "jordaofederal@gmail.com",
+          telephone: "(38) 99877-7968",
+          url: "https://www.instagram.com/jordaovsilva/",
+          description: "Direito para Ecovilas - Jordão explora a relação entre direito e práticas ecológicas.",
+        },
+        {
+          "@type": "Person",
+          name: "Rafael Pedreschi",
+          jobTitle: "Arquiteto e Urbanista",
+          email: "rafaelpedreschi@gmail.com",
+          description: "Arquitetura Sustentável e Bioarquitetura - Rafael discute como a arquitetura pode ser aliada da sustentabilidade.",
+        },
+        {
+          "@type": "Person",
+          name: "André Bura",
+          jobTitle: "Economista",
+          email: "falecombura@gmail.com",
+          telephone: "(11) 97460-5288",
+          url: "https://www.instagram.com/economiadodespertar/",
+          description: "Economia do Despertar - André apresenta novos paradigmas econômicos que favorecem a regeneração.",
+        },
+        {
+          "@type": "Person",
+          name: "Matheus Barbosa",
+          jobTitle: "Educador e Digital Marketer",
+          email: "matiasestrategiadigital@gmail.com",
+          telephone: "(16) 99175-4975",
+          url: "https://www.instagram.com/matheus.oliveira55/",
+          description: "Educação Ambiental para Pais e Filhos - Matheus ensina sobre a importância da educação ambiental.",
+        },
+        {
+          "@type": "Person",
+          name: "Agta Roberta",
+          jobTitle: "Administradora e Engenheira Agrônoma",
+          email: "agtaroberta@hotmail.com",
+          telephone: "(77) 99841-3928",
+          url: "https://www.instagram.com/agta_rosasdodeserto/",
+          description: "Conhecendo a Rosa do Deserto - Agta explora o cultivo e cuidados com plantas.",
+        },
+      ],
+    },
+    offers: {
+      "@type": "Offer",
+      priceCurrency: "BRL",
+      price: "432.00",
+      url: "https://pay.hotmart.com/X93273748V?bid=1727540329234",
+      itemCondition: "https://schema.org/NewCondition",
+      availability: "https://schema.org/InStock",
+      description: "Pacote Anual: R$ 432,00, dividido em até 12x sem juros.",
+      category: "Cursos Online",
+      acceptedPaymentMethod: [
+        {
+          "@type": "PaymentMethod",
+          name: "Cartão de Crédito",
+        },
+        {
+          "@type": "PaymentMethod",
+          name: "Cartão de Débito",
+        },
+        {
+          "@type": "PaymentMethod",
+          name: "PIX",
+        },
+        {
+          "@type": "PaymentMethod",
+          name: "Boleto",
+        },
+      ],
+      warranty: {
+        "@type": "WarrantyPromise",
+        durationOfWarranty: {
+          "@type": "QuantitativeValue",
+          value: 7,
+          unitText: "DAYS",
+        },
+        description: "Garantia de 7 dias para reembolso.",
+      },
+    },
+  }}
+/>

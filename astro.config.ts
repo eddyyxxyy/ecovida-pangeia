@@ -21,6 +21,13 @@ export default defineConfig({
     react(),
   ],
 
+  redirects: {
+    "/": {
+      destination: "/clube-da-transicao",
+      status: 301,
+    },
+  },
+
   output: "hybrid",
   adapter: vercel(),
 });
