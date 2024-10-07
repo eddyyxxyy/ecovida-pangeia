@@ -26,6 +26,8 @@ import { CollapsiblePillars } from "@/components/home/CollapsiblePillars";
 import { LearningThemesAccordion } from "@/components/home/LearningThemesAccordion";
 import { ProductAndBenefitsCards } from "@/components/home/ProductAndBenefitsCards";
 
+import JsonLdSchema from "@/components/JsonLdSchema.astro";
+
 const pageTitle =
   "Desperte sua consciência com o Clube da Transição! Acesse e faça parte!";
 
@@ -46,6 +48,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
     logoPangeiaImage.src,
   ]}
 >
+  <JsonLdSchema slot="json-ld-data" />
   <main slot="main">
     <header
       class="overflow-hidden bg-header-paralax bg-fixed bg-center bg-cover"

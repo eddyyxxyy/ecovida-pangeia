@@ -5,7 +5,6 @@ import "@/styles/fonts.css";
 import "@/styles/globals.css";
 
 import Footer from "@/components/Footer.astro";
-import JsonLdSchema from "@/components/JsonLdSchema.astro";
 
 interface Props {
   pageTitle: string;
@@ -36,13 +35,13 @@ const { pageTitle, pageDescription, canonicalUrl, preloadImages } = Astro.props;
     <meta property="og:description" content={pageDescription} />
     <meta property="og:image" content="https://ecovidapangeia.com/logo.webp" />
     <meta property="og:url" content="https://ecovidapangeia.com" />
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={pageDescription} />
     <title>{pageTitle}</title>
-    <JsonLdSchema />
+    <slot name="json-ld-data" />
     <script>
       import AOS from "aos";
 
