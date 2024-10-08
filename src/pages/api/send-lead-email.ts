@@ -5,7 +5,7 @@ import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import { z } from "zod";
 
-import { formSchema } from "@/components/home/LeadFormSchema";
+import { formSchema } from "@/components/clube-da-transicao/LeadFormSchema";
 import { asHtml } from "transactional/emails/clube-da-transicao-lead-email";
 
 dotenv.config();
