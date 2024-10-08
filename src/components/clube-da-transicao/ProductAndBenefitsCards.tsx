@@ -1,4 +1,4 @@
-import { HandCoins, BadgeCheck, Laptop, Smartphone, Tablet, Eye, BadgeDollarSign } from "lucide-react";
+import { HandCoins, BadgeCheck, Laptop, Smartphone, Tablet, Eye, BadgeDollarSign, Gem } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -26,6 +26,25 @@ const benefits = [
   },
 ];
 
+const exclusiveBenefits = [
+  {
+    title: "Hospedagem na Ecovida Pangeia",
+    description: "Acesso à hospedagem em nossas instalações com descontos de até 60%",
+  },
+  {
+    title: "Vivências presenciais e online",
+    description: "Acesso às vivencias presenciais e outros cursos online com até 50% de desconto",
+  },
+  {
+    title: "Participação em sorteios",
+    description: "Acesso e participação em sorteios exclusivos de produtos e hospedagens",
+  },
+  {
+    title: "Aprender e evoluir em forúns",
+    description: "Participação em forúns exclusivos sobre ações de construção da Ecovila",
+  },
+];
+
 type CardProps = React.ComponentProps<typeof Card>
 
 export const ProductAndBenefitsCards = ({ className, ...props }: CardProps) => {
@@ -37,7 +56,7 @@ export const ProductAndBenefitsCards = ({ className, ...props }: CardProps) => {
           <CardDescription className="text-gray-200 text-lg">Garantias e muito mais.</CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
-          <div className="flex items-center space-x-4 rounded-md bg-white border p-4">
+          <div className="flex items-center space-x-4 rounded-md md:space-x-0 lg:space-x-4 bg-white border p-4">
             <div className="p-2 border border-white rounded-full bg-brand-mud md:sr-only lg:not-sr-only lg:block lg:p-2">
               <HandCoins className="text-white lg:size-8" />
             </div>
@@ -88,8 +107,8 @@ export const ProductAndBenefitsCards = ({ className, ...props }: CardProps) => {
         </CardHeader>
         <CardContent className="flex-1 grid gap-4">
           <div className="flex flex-col items-center justify-center gap-x-4 rounded-md text-brand-orange bg-white border p-4">
-            <div className="flex flex-col md:flex-row items-center space-x-4">
-              <div className="flex gap-4 items-center space-4">
+            <div className="flex items-center space-x-4">
+              <div className="flex gap-4 items-center">
                 <BadgeDollarSign className="size-20 md:size-24" />
                 <div className="grid">
                   <p className="text-xs text-gray-500 md:text-xs">
@@ -126,6 +145,58 @@ export const ProductAndBenefitsCards = ({ className, ...props }: CardProps) => {
           >
             <Button className="w-full bg-white text-brand-orange text-lg hover:bg-white hover:brightness-90 transition-all" size={"lg"}>
               <BadgeCheck className="mr-2 size-5" /> Quero ser fundador!
+            </Button>
+          </a>
+        </CardFooter>
+      </Card>
+      <Card className={cn("bg-brand-green text-white col-span-3", className)} {...props}>
+        <CardHeader className="text-center">
+          <CardTitle className="text-2xl">Vantagens exclusivas para fundadores</CardTitle>
+          <CardDescription className="text-gray-200 text-lg">Especial, feita para você</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4">
+          <div className="flex md:flex-col items-center gap-4 rounded-md bg-white border p-4">
+            <div className="bg-brand-green p-2 rounded-full">
+              <Gem className="text-white md:size-16" />
+            </div>
+            <div className="flex-1 space-y-1 md:text-center">
+              <p className="text-sm font-medium text-brand-green leading-none md:text-2xl">
+                Comunidade, hospedagem, sorteios, forúns...
+              </p>
+              <p className="text-xs text-gray-600 md:text-lg lg:w-4/5 mx-auto">
+                Muito mais que um produto, com sua participação ativa seremos juntos
+                fundadores do Novo Paradigma: um projeto ambiental, cultural e social.
+              </p>
+            </div>
+          </div>
+          <div className="mt-4 md:grid md:grid-cols-2">
+            {exclusiveBenefits.map((benefit, index) => (
+              <div
+                key={index}
+                className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
+              >
+                <span className="flex h-2 w-2 translate-y-1 rounded-full bg-white md:size-3 md:translate-y-2" />
+                <div className="space-y-1">
+                  <p className="text-sm font-medium leading-none md:text-xl">
+                    {benefit.title}
+                  </p>
+                  <p className="text-sm text-gray-200 md:text-lg">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+        <CardFooter>
+          <a
+            href="https://pay.hotmart.com/X93273748V"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            className="w-full group"
+          >
+            <Button className="w-full bg-white text-brand-green text-lg hover:bg-white hover:brightness-90 transition-all" size={"lg"}>
+              <BadgeCheck className="mr-2 size-5" /> Me tornar fundador agora!
             </Button>
           </a>
         </CardFooter>
